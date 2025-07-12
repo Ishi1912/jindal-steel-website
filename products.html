@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Products | Jindal Stainless Steel and Hardware</title>
+  <link rel="stylesheet" href="products.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+</head>
+<body>
+  <header>
+    <h1>Our Products</h1>
+    <nav>
+        <div id="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+        </div>
+      </nav>
+  </header>
+
+  <section class="product-grid-section">
+    <div class="product-grid">
+      <div class="product-box" data-aos="fade-up">
+        <img src="pipe.png" alt="SS Pipes" />
+        <h3>SS Pipes</h3>
+      </div>
+      <div class="product-box" data-aos="fade-up">
+        <img src="icons/flange.png" alt="SS Flanges" />
+        <h3>SS Flanges</h3>
+      </div>
+      <div class="product-box" data-aos="fade-up">
+        <img src="icons/valve.png" alt="Flange Valves" />
+        <h3>SS Flange Valves</h3>
+      </div>
+      <div class="product-box" data-aos="fade-up">
+        <img src="slider3.png" alt="SS Sheets" />
+        <h3>SS Sheets 304/316</h3>
+      </div>
+      <div class="product-box" data-aos="fade-up">
+        <img src="icons/fittings.png" alt="Pipe Fittings" />
+        <h3>SS Pipe Fittings</h3>
+      </div>
+      <div class="product-box" data-aos="fade-up">
+        <img src="icons/perforated.png" alt="Perforated Sheets" />
+        <h3>SS Perforated Sheets</h3>
+      </div>
+      <div class="product-box" data-aos="fade-up">
+        <img src="icons/reducer.png" alt="Reducer" />
+        <h3>SS Reducers</h3>
+      </div>
+      <div class="product-box" data-aos="fade-up">
+        <img src="angle.png" alt="Stainless Angles" />
+        <h3>Stainless Angles</h3>
+      </div>
+      <div class="product-box" data-aos="fade-up">
+        <img src="pati.png" alt="Stainless pati" />
+        <h3>Stainless pati</h3>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/918744875242" class="floating-btn whatsapp" target="_blank" title="Chat on WhatsApp">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+  </a>
+
+  <a href="tel:+918744875242" class="floating-btn call" title="Call Us">
+    <img src="https://img.icons8.com/fluency/48/000000/phone.png" alt="Call" />
+  </a>
+
+  <footer>
+    <p>&copy; 2024 Jindal Stainless Steel and Hardware</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

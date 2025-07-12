@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>Jindal Stainless Steel and Hardware</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header with Nav -->
+  <header>
+    <h1>Jindal Stainless Steel and Hardware</h1>
+    <nav id="main-nav">
+      <div id="menu-toggle" onclick="toggleMenu()">☰</div>
+      <div id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Carousel Section -->
+  <section class="carousel-section">
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <img src="pati.png" alt="Slide 1" />
+        <img src="slider2.png" alt="Slide 2" />
+        <img src="pipe.png" alt="Slide 3" />
+        <img src="rod.png" alt="Slide 4" />
+        <img src="pati.png" alt="Slide 1 Duplicate" />
+        <img src="slider2.png" alt="Slide 2 Duplicate" />
+        <img src="pipe.png" alt="Slide 3 Duplicate" />
+        <img src="rod.png" alt="Slide 4 Duplicate" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section class="content-section" id="products">
+    <h2>Our Products</h2>
+    <label for="grade-filter">Filter by Grade:</label>
+    <select id="grade-filter" onchange="filterProducts(this.value)">
+      <option value="">All</option>
+      <option value="202">202</option>
+      <option value="304">304</option>
+    </select>
+
+    <div class="product-list">
+      <div class="product">
+        <h3>Stainless Pipes</h3>
+        <img src="pipe.png" alt="Stainless Pipes" />
+      </div>
+      <div class="product">
+        <h3>Stainless Pati</h3>
+        <img src="pati.png" alt="Stainless Pati" />
+      </div>
+      <div class="product">
+        <h3>Stainless Angles</h3>
+        <img src="angle.png" alt="Stainless Angles" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Section -->
+  <section class="parallax" id="parallax-2">
+    <div class="overlay">
+      <h2>Durable & Strong Steel Products</h2>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Address: Q58M+G32, Nathupura Rd, Darshan Vihar Colony, A Block, Nathupura, Burari, Delhi, 110084</p>
+    <p>Phone: <a href="tel:+918744875242">+91-8744875242</a></p>
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.43508458693!2d77.18005207429938!3d28.76627897799673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d00302ca659ab%3A0x10b50ac579d6f12c!2sjindal%20stainless%20steel%20and%20hardware!5e0!3m2!1sen!2sin!4v1752256679522!5m2!1sen!2sin" 
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+
+    <form action="contact.php" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Floating Buttons -->
+  <a href="https://wa.me/918744875242" class="floating-btn whatsapp" target="_blank" title="Chat on WhatsApp">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+  </a>
+
+  <a href="tel:+918744875242" class="floating-btn call" title="Call Us">
+    <img src="https://img.icons8.com/fluency/48/000000/phone.png" alt="Call" />
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Jindal Stainless Steel and Hardware</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const products = [
+      { name: "Stainless Steel Pipes", grade: "202", size: "Various", image: "pipe.png" },
+      { name: "Welding Rods", grade: "304", size: "Standard", image: "rod.png" },
+      { name: "Stainless Angles", grade: "202", size: "Custom", image: "angle.png" },
+      { name: "Stainless Pati", grade: "202", size: "Various", image: "pati.png" },
+    ];
+
+    function filterProducts(grade) {
+      const productContainer = document.querySelector(".product-list");
+      productContainer.innerHTML = "";
+
+      const filtered = grade ? products.filter(p => p.grade === grade) : products;
+
+      filtered.forEach(product => {
+        let card = `
+          <div class="product">
+            <h3>${product.name}</h3>
+            <img src="${product.image}" alt="${product.name}" />
+            <p>Grade: ${product.grade}</p>
+            <p>Size: ${product.size}</p>
+          </div>`;
+        productContainer.innerHTML += card;
+      });
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById('main-nav');
+      nav.classList.toggle('expanded');
+    }
+
+    window.onload = () => filterProducts("");
+  </script>
+</body>
+</html>
